@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.mapper.User_MeetingMapper">
+    <resultMap id="User_MeetingMap" type="ssm.pojo.User_Meeting">
+        <id column="uid" property="uid" />
+        <result column="username1" property="username1" />
+        <result column="workplace" property="workplace" />
+        <result column="mid" property="mid" />
+        <result column="meetingname" property="meetingname" />
+        <result column="meetingcontent" property="meetingcontent" />
+        <result column="publisherid" property="publisherid" />
+    </resultMap>
+
+<select id="selectByUserId" parameterType="ssm.pojo.User" resultMap="User_MeetingMap">
+    SELECT user.*,meeting.*
+    FROM user,meeting
+    WHERE uid=mid
+    AND uid='${uid}'
+</select>
+</mapper>

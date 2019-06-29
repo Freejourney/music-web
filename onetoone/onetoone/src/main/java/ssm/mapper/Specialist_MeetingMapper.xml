@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.mapper.Specialist_MeetingMapper">
+    <resultMap id="Specialist_MeetingMap" type="ssm.pojo.Specialist_Meeting">
+        <id column="sid" property="sid" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="idcard" property="idcard" />
+        <result column="realname" property="realname" />
+        <result column="sex" property="sex" />
+        <result column="address" property="address" />
+        <result column="phonenumber" property="phonenumber" />
+        <result column="job" property="job" />
+        <result column="type" property="type" />
+        <result column="mid" property="mid" />
+        <result column="meetingname" property="meetingname" />
+        <result column="meetingcontent" property="meetingcontent" />
+        <result column="publisherid" property="publisherid" />
+    </resultMap>
+
+    <select id="selectBySpecialistId" parameterType="ssm.pojo.Specialist" resultMap="Specialist_MeetingMap">
+        SELECT meeting.*,specialist.*
+        FROM meeting,specialist
+        WHERE mid=sid
+        AND sid='${sid}'
+    </select>
+</mapper>

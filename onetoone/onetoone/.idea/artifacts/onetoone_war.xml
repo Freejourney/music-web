@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="onetoone:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>onetoone</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="onetoone.war">
+      <element id="artifact" artifact-name="onetoone:war exploded" />
+    </root>
+  </artifact>
+</component>
